@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:charts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:local="clr-namespace:SensorApp" 
+             x:Class="SensorApp.MainPage">
+   <ContentPage.Content >
+        <StackLayout VerticalOptions="StartAndExpand" 
+                     HorizontalOptions="Center"
+                     Padding="0,60,5,5"
+                     >
+            <Label Text="Temperature Sensor App"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="10"/>
+            
+            <Label Text="TemperatureValues"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="CenterAndExpand"
+                   />
+  
+            <charts:ChartView x:Name="Chart1" 
+                              Chart="{Binding Chart}"
+                              BackgroundColor="Black" 
+                              HeightRequest="350"
+                              WidthRequest="400"/>
+            
+                        <Label
+                            Text="Highest Temperature: " TextColor="Red"         
+                            FontAttributes="Bold" 
+                            />
+                        <Label
+                            x:Name="Highest"
+                            TextColor="Red" 
+                            FontAttributes="Bold" />
+               
+                        <Label
+                            TextColor="Green" Text=" Lowest Temperature: "
+                            FontAttributes="Bold"
+                            />
+                    
+                        <Label
+                            x:Name="Lowest"
+                            TextColor="Green" 
+                            FontAttributes="Bold" />
+                        <Label
+                            TextColor="Blue" Text=" Average Temperature: "
+                            FontAttributes="Bold"/>
+                    
+                        <Label
+                            x:Name="Average"
+                            TextColor="Blue" 
+                            FontAttributes="Bold" />
+            
+             <Button Text="Refresh chart" Clicked="GetChart" 
+                     VerticalOptions="End" 
+                     FontAttributes="Bold"
+                     FontSize="Large"
+                     />
+             
+        </StackLayout>
+      </ContentPage.Content>
+</ContentPage>
